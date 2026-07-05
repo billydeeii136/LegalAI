@@ -1,0 +1,28 @@
+federal_cases:
+  - case_title: US v Davis
+    court: USDC-EDNC
+    case_number: 5:14-CR-240
+    tags:
+      - 28_USC_2255_h
+      - FRCrimP_41_g
+    automation:
+      pacer_enabled: true
+      citation_sync: true
+state_cases:
+  - case_title: State NC v Davis
+    court: NC-State
+    case_number: 07-CRS-71692
+    tags:
+      - motion_for_appropriate_relief
+      - common_law_forgery
+      - obtaining_property_by_false_pretenses
+    automation:
+      pacer_enabled: false
+      state_portal_required: true
+  - case_title: In re AOLE Cary NC Detective Ervin Leggett
+    court: NC-State
+    case_number: UNKNOWN_FILL_REQUIRED
+    tags:
+      - motion_for_appropriate_relief
+    automation:
+      state_portal_required: true

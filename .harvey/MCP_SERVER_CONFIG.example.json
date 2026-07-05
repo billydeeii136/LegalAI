@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "harvey-legal-connectors": {
+      "command": "node",
+      "args": [
+        ".harvey/mcp/legal-connectors-mcp/server.js"
+      ],
+      "env": {
+        "PACER_USERNAME": "{{PACER_USERNAME}}",
+        "PACER_PASSWORD": "{{PACER_PASSWORD}}",
+        "WESTLAW_API_URL": "{{WESTLAW_API_URL}}",
+        "WESTLAW_API_KEY": "{{WESTLAW_API_KEY}}",
+        "LEXIS_API_URL": "{{LEXIS_API_URL}}",
+        "LEXIS_API_KEY": "{{LEXIS_API_KEY}}"
+      }
+    }
+  }
+}

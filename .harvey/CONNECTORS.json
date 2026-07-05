@@ -11,11 +11,30 @@
     "google_drive": {
       "mode": "read-index-validate",
       "enabled": true
+    },
+    "pacer": {
+      "mode": "credential-template-with-manual-mfa",
+      "enabled": true,
+      "supports_case_watchlist": true
+    },
+    "westlaw": {
+      "mode": "api-template",
+      "enabled": true
+    },
+    "lexisnexis": {
+      "mode": "api-template",
+      "enabled": true
+    },
+    "mcp_legal_connectors": {
+      "mode": "stdio-mcp-server",
+      "enabled": true,
+      "entrypoint": "node .harvey/mcp/legal-connectors-mcp/server.js"
     }
   },
   "sync_policies": {
     "verify_checksums": true,
     "signed_commits_recommended": true,
-    "block_unverified_artifacts": true
+    "block_unverified_artifacts": true,
+    "require_terms_of_service_compliance": true
   }
 }

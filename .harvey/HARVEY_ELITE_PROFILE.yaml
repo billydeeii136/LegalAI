@@ -39,3 +39,26 @@ workflow_gates:
 mcr_2026:
   enabled: true
   description: Legal MCR 2026 alignment enabled for governance-first workflows
+integrations:
+  pacer:
+    enabled: true
+    auth_mode: credential_plus_mfa
+    courts_default:
+      - nced
+      - vaed
+    watchlist_file: .harvey/LEGAL_CASE_WATCHLIST.yaml
+  westlaw:
+    enabled: true
+    connector_mode: api_template
+  lexisnexis:
+    enabled: true
+    connector_mode: api_template
+  mcp_server:
+    enabled: true
+    entrypoint: .harvey/mcp/legal-connectors-mcp/server.js
+automation:
+  runbook_script: .harvey/full_automation.sh
+  sync_script: .harvey/sync_harvey.sh
+  credential_files:
+    - .harvey/PACER.env
+    - .harvey/LEGAL_RESEARCH.env

@@ -118,3 +118,10 @@ Key files:
 - .harvey/HARVEY_ELITE_PROFILE.yaml
 - .harvey/COMPLIANCE_CONTROLS.md
 - .harvey/CONNECTORS.json
+
+Additional automation files:
+- .harvey/full_automation.sh
+- .harvey/PACER.env.example
+- .harvey/LEGAL_RESEARCH.env.example
+- .harvey/LEGAL_CASE_WATCHLIST.yaml
+- .harvey/MCP_SERVER_CONFIG.example.json

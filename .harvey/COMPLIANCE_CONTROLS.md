@@ -5,3 +5,6 @@
 - Require jurisdiction tagging for every drafted motion, response, and exhibit.
 - Record citation lineage for each legal assertion used in generated output.
 - Require human sign-off prior to any final civil/criminal filing export.
+- Enforce PACER, Westlaw, and LexisNexis terms-of-service and account-use restrictions.
+- Require manual MFA step when providers enforce additional authentication challenges.
+- Disable plain-text credential storage; use environment variables and local secret files only.
