@@ -125,3 +125,4 @@ Additional automation files:
 - .harvey/LEGAL_RESEARCH.env.example
 - .harvey/LEGAL_CASE_WATCHLIST.yaml
 - .harvey/MCP_SERVER_CONFIG.example.json
+- .harvey/GITHUB_ACTIONS_AUTOMATION_TEMPLATE.yml
