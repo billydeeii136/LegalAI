@@ -1,9 +1,11 @@
 # Harvey Legal Connectors MCP Server (Template)
 This MCP server scaffold provides starter tools for:
-- PACER case lookup wiring
-- Westlaw query wiring
-- LexisNexis query wiring
-- Case watchlist status
+- PACER login execution (`pacer_login_run`)
+- PACER watchlist sync (`pacer_watchlist_sync_run`)
+- PACER case lookup templates (`pacer_case_lookup_template`)
+- Westlaw query wiring (`westlaw_query_template`)
+- LexisNexis query wiring (`lexis_query_template`)
+- Case watchlist status (`case_watchlist_status`)
 
 ## Quick start
 1. Create `.harvey/PACER.env` from `.harvey/PACER.env.example`.

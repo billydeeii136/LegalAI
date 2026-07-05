@@ -126,3 +126,5 @@ Additional automation files:
 - .harvey/LEGAL_CASE_WATCHLIST.yaml
 - .harvey/MCP_SERVER_CONFIG.example.json
 - .harvey/GITHUB_ACTIONS_AUTOMATION_TEMPLATE.yml
+- .harvey/scripts/pacer_case_sync.py
+- .harvey/LEGAL_CASE_WATCHLIST.json

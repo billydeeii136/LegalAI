@@ -16,10 +16,25 @@ if [ -f "${ROOT_DIR}/LEGAL_RESEARCH.env" ]; then
   . "${ROOT_DIR}/LEGAL_RESEARCH.env"
   set +a
 fi
+if [ -z "${PACER_USERNAME:-}" ] && [ -n "${PACER_KEYCHAIN_ACCOUNT:-}" ]; then
+  PACER_USERNAME="${PACER_KEYCHAIN_ACCOUNT}"
+fi
+
+if [ -z "${PACER_PASSWORD:-}" ] && [ -n "${PACER_KEYCHAIN_SERVICE:-}" ] && command -v security >/dev/null 2>&1; then
+  PACER_PASSWORD="$(security find-generic-password -s "${PACER_KEYCHAIN_SERVICE}" -a "${PACER_KEYCHAIN_ACCOUNT:-${PACER_USERNAME:-}}" -w 2>/dev/null || true)"
+fi
 
 python3 "${ROOT_DIR}/scripts/pacer_login_template.py" \
   --watchlist "${ROOT_DIR}/LEGAL_CASE_WATCHLIST.yaml" \
-  --session-out "${RUNTIME_DIR}/pacer_session.json"
+  --session-out "${RUNTIME_DIR}/pacer_session.json" \
+  --state-out "${RUNTIME_DIR}/pacer_storage_state.json" \
+  --mode "${PACER_LOGIN_MODE:-auto}" \
+  --mfa-timeout-seconds "${PACER_MFA_TIMEOUT_SECONDS:-300}"
+
+python3 "${ROOT_DIR}/scripts/pacer_case_sync.py" \
+  --watchlist "${ROOT_DIR}/LEGAL_CASE_WATCHLIST.yaml" \
+  --session-in "${RUNTIME_DIR}/pacer_session.json" \
+  --report-out "${RUNTIME_DIR}/pacer_case_sync_report.json"
 
 if [ "${START_MCP_SERVER:-0}" = "1" ]; then
   (

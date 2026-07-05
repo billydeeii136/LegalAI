@@ -27,7 +27,7 @@ jobs:
           node-version: "20"
 
       - name: Install Python dependencies
-        run: python -m pip install --upgrade pip requests
+        run: python -m pip install --upgrade pip requests pyyaml playwright
 
       - name: Write secure env files
         run: |
@@ -35,9 +35,13 @@ jobs:
           cat > .harvey/PACER.env <<'EOF'
           PACER_USERNAME=${{ secrets.PACER_USERNAME }}
           PACER_PASSWORD=${{ secrets.PACER_PASSWORD }}
+          PACER_KEYCHAIN_SERVICE=harvey.pacer.gov
+          PACER_KEYCHAIN_ACCOUNT=${{ secrets.PACER_USERNAME }}
           PACER_CLIENT_CODE=${{ secrets.PACER_CLIENT_CODE }}
           PACER_LOGIN_URL=https://pacer.login.uscourts.gov/csologin/login.jsf
           PACER_MFA_MODE=manual
+          PACER_LOGIN_MODE=requests
+          PACER_MFA_TIMEOUT_SECONDS=180
           EOF
           cat > .harvey/LEGAL_RESEARCH.env <<'EOF'
           WESTLAW_API_URL=${{ secrets.WESTLAW_API_URL }}

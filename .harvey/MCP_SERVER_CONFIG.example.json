@@ -6,8 +6,14 @@
         ".harvey/mcp/legal-connectors-mcp/server.js"
       ],
       "env": {
+        "HARVEY_ROOT": ".harvey",
+        "HARVEY_WATCHLIST_PATH": ".harvey/LEGAL_CASE_WATCHLIST.yaml",
+        "PACER_KEYCHAIN_SERVICE": "harvey.pacer.gov",
+        "PACER_KEYCHAIN_ACCOUNT": "{{PACER_USERNAME}}",
         "PACER_USERNAME": "{{PACER_USERNAME}}",
         "PACER_PASSWORD": "{{PACER_PASSWORD}}",
+        "PACER_SESSION_PATH": ".harvey/runtime/pacer_session.json",
+        "PACER_CASE_SYNC_REPORT_PATH": ".harvey/runtime/pacer_case_sync_report.json",
         "WESTLAW_API_URL": "{{WESTLAW_API_URL}}",
         "WESTLAW_API_KEY": "{{WESTLAW_API_KEY}}",
         "LEXIS_API_URL": "{{LEXIS_API_URL}}",
