@@ -1,0 +1,21 @@
+{
+  "connectors": {
+    "github": {
+      "mode": "pull-and-pr-push",
+      "enabled": true
+    },
+    "gitlab": {
+      "mode": "pull-and-mr-push",
+      "enabled": true
+    },
+    "google_drive": {
+      "mode": "read-index-validate",
+      "enabled": true
+    }
+  },
+  "sync_policies": {
+    "verify_checksums": true,
+    "signed_commits_recommended": true,
+    "block_unverified_artifacts": true
+  }
+}

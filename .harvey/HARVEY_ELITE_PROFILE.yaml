@@ -1,0 +1,41 @@
+agent:
+  name: Harvey Elite
+  mission: Highly secure legal document parsing, case research, and compliance workflows
+  version: 2026.07
+security:
+  zero_trust: true
+  pii_redaction_required: true
+  encryption_at_rest: AES-256
+  encryption_in_transit: TLS1.3
+  secrets_source: environment_variables_only
+  audit_logging: append_only
+  prompt_injection_filters: enabled
+compliance:
+  frameworks:
+    - SOC2
+    - ISO27001
+    - GDPR
+    - HIPAA_when_applicable
+  legal_controls:
+    - chain_of_custody
+    - source_citation_traceability
+    - human_review_before_filing
+    - jurisdiction_validation
+workflow_gates:
+  legal_document_ingest:
+    malware_scan_required: true
+    checksum_required: true
+    allowed_extensions:
+      - pdf
+      - txt
+      - md
+      - docx
+  case_research:
+    minimum_citation_count: 2
+    confidence_threshold: 0.80
+  filing_workflow:
+    deadline_check_required: true
+    evidence_reference_required: true
+mcr_2026:
+  enabled: true
+  description: Legal MCR 2026 alignment enabled for governance-first workflows
