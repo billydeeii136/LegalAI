@@ -128,3 +128,7 @@ Additional automation files:
 - .harvey/GITHUB_ACTIONS_AUTOMATION_TEMPLATE.yml
 - .harvey/scripts/pacer_case_sync.py
 - .harvey/LEGAL_CASE_WATCHLIST.json
+- .harvey/LEGAL_IDENTITY_ANCHORS.yaml
+- .harvey/GOOGLE_DRIVE_SOURCES.json
+- .harvey/DRIVE_DISCOVERED_CASE_ANCHORS.json
+- .harvey/scripts/discover_drive_case_anchors.py

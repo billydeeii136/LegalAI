@@ -10,7 +10,17 @@
     },
     "google_drive": {
       "mode": "read-index-validate",
-      "enabled": true
+      "enabled": true,
+      "sources": [
+        {
+          "account": "billydeeii136@gmail.com",
+          "mount_path": "/Users/billydeeii136/Library/CloudStorage/GoogleDrive-billydeeii136@gmail.com/My Drive"
+        },
+        {
+          "account": "williamscottdavis136@gmail.com",
+          "mount_path": "/Users/billydeeii136/Library/CloudStorage/GoogleDrive-williamscottdavis136@gmail.com/My Drive"
+        }
+      ]
     },
     "pacer": {
       "mode": "credential-template-with-manual-mfa",

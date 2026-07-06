@@ -1,0 +1,20 @@
+canonical_identity:
+  legal_name: William Scott Davis Jr
+  identity_assertion: William Scott Davis Jr and William Scott Davis II variants are treated as the same anchored identity for relief workflows.
+aliases:
+  - William Scott Davis Jr
+  - William Scott Davis II
+  - William Scott Davis 2nd
+  - William S. Davis Jr
+  - William S. Davis II
+  - W. Scott Davis
+  - WSD JR
+  - WSD II
+matching_policy:
+  case_insensitive: true
+  normalize_punctuation: true
+  collapse_whitespace: true
+  accept_suffix_aliases:
+    - jr
+    - ii
+    - 2nd

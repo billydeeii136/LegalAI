@@ -31,10 +31,16 @@ python3 "${ROOT_DIR}/scripts/pacer_login_template.py" \
   --mode "${PACER_LOGIN_MODE:-auto}" \
   --mfa-timeout-seconds "${PACER_MFA_TIMEOUT_SECONDS:-300}"
 
+DRIVE_ANCHOR_MAX_FILES="${DRIVE_ANCHOR_MAX_FILES:-2000}" \
+DRIVE_ANCHOR_MAX_DEPTH="${DRIVE_ANCHOR_MAX_DEPTH:-1}" \
+python3 "${ROOT_DIR}/scripts/discover_drive_case_anchors.py" || true
+
 python3 "${ROOT_DIR}/scripts/pacer_case_sync.py" \
   --watchlist "${ROOT_DIR}/LEGAL_CASE_WATCHLIST.yaml" \
   --session-in "${RUNTIME_DIR}/pacer_session.json" \
-  --report-out "${RUNTIME_DIR}/pacer_case_sync_report.json"
+  --report-out "${RUNTIME_DIR}/pacer_case_sync_report.json" \
+  --identity-anchors "${ROOT_DIR}/LEGAL_IDENTITY_ANCHORS.yaml" \
+  --drive-discovered "${ROOT_DIR}/DRIVE_DISCOVERED_CASE_ANCHORS.json"
 
 if [ "${START_MCP_SERVER:-0}" = "1" ]; then
   (

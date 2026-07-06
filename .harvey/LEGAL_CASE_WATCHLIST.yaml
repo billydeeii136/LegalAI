@@ -2,12 +2,56 @@ federal_cases:
   - case_title: US v Davis
     court: USDC-EDNC
     case_number: 5:14-CR-240
+    case_number_aliases:
+      - 5:14-CR-00240
     tags:
       - 28_USC_2255_h
       - FRCrimP_41_g
+      - anchor_identity_william_scott_davis
     automation:
       pacer_enabled: true
       citation_sync: true
+      identity_anchor_required: true
+  - case_title: Davis federal civil matter (EDVA)
+    court: USDC-EDVA
+    case_number: 4:13-CV-00058
+    tags:
+      - civil_docket_anchor
+      - anchor_identity_william_scott_davis
+    automation:
+      pacer_enabled: true
+      citation_sync: true
+      identity_anchor_required: true
+  - case_title: Davis federal civil matter (EDVA)
+    court: USDC-EDVA
+    case_number: 4:13-CV-00007
+    tags:
+      - civil_docket_anchor
+      - anchor_identity_william_scott_davis
+    automation:
+      pacer_enabled: true
+      citation_sync: true
+      identity_anchor_required: true
+  - case_title: Davis related appellate anchor
+    court: USCOA-4
+    case_number: 13-2505
+    tags:
+      - uscoa4_anchor
+      - anchor_identity_william_scott_davis
+    automation:
+      pacer_enabled: true
+      citation_sync: true
+      identity_anchor_required: true
+  - case_title: Davis appellate-linked civil anchor
+    court: USCOA-4
+    case_number: 4:11-CV-00012
+    tags:
+      - uscoa4_anchor
+      - anchor_identity_william_scott_davis
+    automation:
+      pacer_enabled: true
+      citation_sync: true
+      identity_anchor_required: true
 state_cases:
   - case_title: State NC v Davis
     court: NC-State
@@ -16,6 +60,16 @@ state_cases:
       - motion_for_appropriate_relief
       - common_law_forgery
       - obtaining_property_by_false_pretenses
+      - anchor_identity_william_scott_davis
+    automation:
+      pacer_enabled: false
+      state_portal_required: true
+  - case_title: NC criminal matter anchor
+    court: NC-State
+    case_number: 06-CRS-72340
+    tags:
+      - criminal_anchor
+      - anchor_identity_william_scott_davis
     automation:
       pacer_enabled: false
       state_portal_required: true
@@ -24,5 +78,6 @@ state_cases:
     case_number: UNKNOWN_FILL_REQUIRED
     tags:
       - motion_for_appropriate_relief
+      - anchor_identity_william_scott_davis
     automation:
       state_portal_required: true

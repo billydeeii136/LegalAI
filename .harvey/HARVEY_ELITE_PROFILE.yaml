@@ -46,7 +46,15 @@ integrations:
     courts_default:
       - nced
       - vaed
+      - uscoa-4
+    federal_court_targets:
+      - usdc-ednc
+      - usdc-edva
+      - uscoa-4
     watchlist_file: .harvey/LEGAL_CASE_WATCHLIST.yaml
+    identity_anchor_file: .harvey/LEGAL_IDENTITY_ANCHORS.yaml
+    drive_sources_file: .harvey/GOOGLE_DRIVE_SOURCES.json
+    discovered_case_anchor_file: .harvey/DRIVE_DISCOVERED_CASE_ANCHORS.json
   westlaw:
     enabled: true
     connector_mode: api_template
@@ -62,3 +70,7 @@ automation:
   credential_files:
     - .harvey/PACER.env
     - .harvey/LEGAL_RESEARCH.env
+  anchor_files:
+    - .harvey/LEGAL_IDENTITY_ANCHORS.yaml
+    - .harvey/GOOGLE_DRIVE_SOURCES.json
+    - .harvey/DRIVE_DISCOVERED_CASE_ANCHORS.json
