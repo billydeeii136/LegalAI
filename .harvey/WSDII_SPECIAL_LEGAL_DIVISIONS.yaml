@@ -1,0 +1,88 @@
+identity_anchor:
+  canonical_identity: William Scott Davis Jr
+  equivalent_identity_variants:
+    - William Scott Davis II
+    - William Scott Davis 2nd
+    - William S. Davis Jr
+    - William S. Davis II
+divisions:
+  - division_id: nc_mar_criminal_relief
+    division_name: NC Criminal MAR Relief Division
+    jurisdictions:
+      - NC-State
+      - Wake-County
+    primary_case_anchors:
+      - 07-CRS-71692
+      - 07-CRS-19698
+      - 07-CRS-XXXXX
+      - 06-CRS-72340
+    allegations_and_theories:
+      - alleged_wrongful_conviction
+      - alleged_common_law_forgery
+      - alleged_obtaining_property_by_false_pretenses
+      - alleged_prosecutorial_misconduct
+      - alleged_suppression_of_exculpatory_evidence
+    relief_channels:
+      - motion_for_appropriate_relief
+      - post_conviction_review
+  - division_id: wake_county_family_juvenile
+    division_name: Wake County Family and Juvenile Jurisdiction Division
+    jurisdictions:
+      - NC-State
+      - Wake-County
+    primary_case_anchors:
+      - 07JA705
+      - 07JT705
+      - 09-CVS-5181
+    allegations_and_theories:
+      - alleged_lack_of_personal_jurisdiction
+      - alleged_lack_of_subject_matter_jurisdiction
+      - alleged_fraud_upon_the_court
+      - ncgs_7b_anchor
+      - ncgs_50a_anchor
+      - title_iv_d_anchor
+      - title_iv_e_anchor
+  - division_id: federal_relief_and_civil_rights
+    division_name: Federal Relief and Civil Rights Division
+    jurisdictions:
+      - USDC-EDNC
+      - USDC-EDVA
+      - USDC-WASH-DC
+      - USCOA-4
+      - SCOTUS
+    primary_case_anchors:
+      - 5:14-CR-240
+      - 5:14-CR-00240
+      - 5:13-CR-240
+      - 4:13-CV-00058
+      - 4:13-CV-00007
+      - 13-2505
+    claims_framework:
+      - 42_USC_1981
+      - 42_USC_1983
+      - 42_USC_1985
+      - 42_USC_1986
+      - federal_civil_rico
+      - false_claims_act
+      - frcp_60b
+      - frcrimp_41g
+      - usc_2255_h
+      - 42_USC_2000d_7
+      - fraud_tolling_theory
+participant_anchors:
+  person_and_entity_aliases:
+    - Irvine Leggitte
+    - Ervin Leggett
+    - C Collin Willoughby Jr
+    - Scott Cunningham
+    - Patricia Bazemore
+    - Melanie A Shekita
+    - Michelle W Savage
+    - WCHS-CPS
+    - WCFC
+    - WC-GAL
+    - Wake County Government Attorney Office
+processing_rules:
+  treat_user_provided_allegations_as_unverified_until_evidence_attached: true
+  require_source_document_link_for_each_material_claim: true
+  require_jurisdiction_mapping_before_drafting: true

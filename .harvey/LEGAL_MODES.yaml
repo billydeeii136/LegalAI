@@ -1,0 +1,34 @@
+modes:
+  zero_byok_free_open:
+    description: Free/open-first legal research mode with paid connectors disabled by default.
+    paid_sources_enabled: false
+    provider_order:
+      - courtlistener
+      - recap
+      - govinfo
+      - cornell_lii
+      - worldlii
+      - bailii
+      - canlii
+    pacer_billing_guard_enabled: true
+  byok_hybrid:
+    description: Uses free providers first, then paid connectors when confidence/citation gaps remain.
+    paid_sources_enabled: true
+    provider_order:
+      - courtlistener
+      - govinfo
+      - pacer
+      - westlaw
+      - lexisnexis
+    max_paid_lookups_per_matter: 5
+  premium_final_review:
+    description: Reserved for human-approved premium legal validation before final filing.
+    paid_sources_enabled: true
+    requires_human_review: true
+routing_rules:
+  - name: free-first
+    when: legal_mode == "zero_byok_free_open"
+    action: route_only_to_free_providers
+  - name: hybrid-escalation
+    when: legal_mode == "byok_hybrid" and citation_gap == true
+    action: allow_paid_provider_escalation

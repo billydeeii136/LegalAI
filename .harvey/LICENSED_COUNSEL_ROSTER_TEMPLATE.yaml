@@ -1,0 +1,34 @@
+version: 2026.07
+notice: Template only. Populate with retained licensed counsel before using as legal-advice routing source.
+jurisdictions:
+  usdc_ednc:
+    jurisdiction_label: USDC Eastern District of North Carolina
+    counsel:
+      - attorney_name: "{{EDNC_ATTORNEY_NAME_1}}"
+        firm: "{{EDNC_FIRM_NAME_1}}"
+        bar_number: "{{EDNC_BAR_NUMBER_1}}"
+        email: "{{EDNC_EMAIL_1}}"
+        phone: "{{EDNC_PHONE_1}}"
+        status: pending_verification
+  usdc_edva:
+    jurisdiction_label: USDC Eastern District of Virginia
+    counsel:
+      - attorney_name: "{{EDVA_ATTORNEY_NAME_1}}"
+        firm: "{{EDVA_FIRM_NAME_1}}"
+        bar_number: "{{EDVA_BAR_NUMBER_1}}"
+        email: "{{EDVA_EMAIL_1}}"
+        phone: "{{EDVA_PHONE_1}}"
+        status: pending_verification
+  nc_state:
+    jurisdiction_label: State of North Carolina licensed attorneys
+    counsel:
+      - attorney_name: "{{NC_STATE_ATTORNEY_NAME_1}}"
+        firm: "{{NC_STATE_FIRM_NAME_1}}"
+        bar_number: "{{NC_STATE_BAR_NUMBER_1}}"
+        email: "{{NC_STATE_EMAIL_1}}"
+        phone: "{{NC_STATE_PHONE_1}}"
+        status: pending_verification
+global_counsel_network:
+  enabled: true
+  licensed_attorney_directory_url: "{{GLOBAL_COUNSEL_DIRECTORY_URL}}"
+  required_contract_reference: "{{COUNSEL_ENGAGEMENT_REFERENCE}}"

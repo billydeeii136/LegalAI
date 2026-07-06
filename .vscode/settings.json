@@ -1,0 +1,19 @@
+{
+  "files.associations": {
+    "*.env.example": "dotenv",
+    "*.xcconfig": "ini"
+  },
+  "yaml.validate": true,
+  "editor.formatOnSave": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": true
+  },
+  "terminal.integrated.env.osx": {
+    "LEGAL_MODE": "zero_byok_free_open",
+    "ENABLE_PAID_ESCALATION": "0"
+  }
+}

@@ -35,16 +35,79 @@
       "mode": "api-template",
       "enabled": true
     },
+    "courtlistener": {
+      "mode": "api-template",
+      "enabled": true,
+      "base_url_env": "COURTLISTENER_API_URL",
+      "token_env": "COURTLISTENER_API_TOKEN"
+    },
+    "recap": {
+      "mode": "api-template",
+      "enabled": true,
+      "base_url_env": "RECAP_API_URL",
+      "token_env": "COURTLISTENER_API_TOKEN",
+      "cost_boundary": "recap-free-until-pacer-fetch"
+    },
+    "govinfo": {
+      "mode": "api-key-template",
+      "enabled": true,
+      "base_url_env": "GOVINFO_API_URL",
+      "api_key_env": "GOVINFO_API_KEY"
+    },
+    "worldlii": {
+      "mode": "public-search-template",
+      "enabled": true,
+      "base_url_env": "WORLDLII_SEARCH_URL"
+    },
+    "bailii": {
+      "mode": "public-search-template",
+      "enabled": true,
+      "base_url_env": "BAILII_SEARCH_URL"
+    },
+    "cornell_lii": {
+      "mode": "public-search-template",
+      "enabled": true,
+      "base_url_env": "CORNELL_LII_SEARCH_URL"
+    },
+    "canlii": {
+      "mode": "api-template-with-terms-guard",
+      "enabled": true,
+      "base_url_env": "CANLII_API_URL",
+      "api_key_env": "CANLII_API_KEY"
+    },
     "mcp_legal_connectors": {
       "mode": "stdio-mcp-server",
       "enabled": true,
       "entrypoint": "node .harvey/mcp/legal-connectors-mcp/server.js"
+    },
+    "licensed_counsel_registry": {
+      "mode": "private-roster-template",
+      "enabled": true,
+      "roster_file": ".harvey/LICENSED_COUNSEL_ROSTER_TEMPLATE.yaml"
+    },
+    "devtools_zero_byok_pack": {
+      "mode": "installer-template",
+      "enabled": true,
+      "installer_script": ".harvey/installers/devtools/install_devtool_integrations.sh",
+      "profiles_root": ".harvey/integrations"
+    },
+    "multilingual_chatbot_mesh": {
+      "mode": "locale-router-template",
+      "enabled": true,
+      "profile": ".harvey/GLOBAL_LAW_FIRM_OPERATING_MODEL.yaml"
+    },
+    "device_installer_pipeline": {
+      "mode": "cli-gui-apk-template",
+      "enabled": true,
+      "deployment_targets_file": ".harvey/DEPLOYMENT_TARGETS.yaml"
     }
   },
   "sync_policies": {
     "verify_checksums": true,
     "signed_commits_recommended": true,
     "block_unverified_artifacts": true,
-    "require_terms_of_service_compliance": true
+    "require_terms_of_service_compliance": true,
+    "respect_provider_terms_and_billing": true,
+    "block_unlicensed_practice_claims": true
   }
 }

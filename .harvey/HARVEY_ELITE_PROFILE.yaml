@@ -39,6 +39,45 @@ workflow_gates:
 mcr_2026:
   enabled: true
   description: Legal MCR 2026 alignment enabled for governance-first workflows
+research_modes:
+  zero_byok_free_open:
+    default: true
+    paid_sources_enabled: false
+    provider_priority:
+      - courtlistener
+      - recap
+      - govinfo
+      - cornell_lii
+      - worldlii
+      - bailii
+      - canlii
+    escalation_triggers:
+      - missing_primary_source
+      - citation_conflict
+      - human_approval_for_paid_lookup
+  byok_hybrid:
+    paid_sources_enabled: true
+    provider_priority:
+      - courtlistener
+      - govinfo
+      - pacer
+      - westlaw
+      - lexisnexis
+    budget_guardrails:
+      max_paid_lookups_per_matter: 5
+      require_citation_gap_before_paid_lookup: true
+model_modes:
+  zero_cost_local_first:
+    local_provider_priority:
+      - ollama
+      - lm_studio
+    recommended_open_models:
+      - deepseek-r1
+      - qwen3-coder
+      - llama3.3-instruct
+  critical_reasoning_review:
+    model_provider: byok
+    requires_human_review: true
 integrations:
   pacer:
     enabled: true
@@ -61,16 +100,58 @@ integrations:
   lexisnexis:
     enabled: true
     connector_mode: api_template
+  courtlistener:
+    enabled: true
+    connector_mode: api_template
+  recap:
+    enabled: true
+    connector_mode: api_template
+  govinfo:
+    enabled: true
+    connector_mode: api_key_template
+  free_legal_sources:
+    enabled: true
+    providers:
+      - courtlistener
+      - recap
+      - govinfo
+      - cornell_lii
+      - worldlii
+      - bailii
+      - canlii
+    legal_research_env_file: .harvey/LEGAL_RESEARCH.env
   mcp_server:
     enabled: true
     entrypoint: .harvey/mcp/legal-connectors-mcp/server.js
+  licensed_counsel_registry:
+    enabled: true
+    roster_template_file: .harvey/LICENSED_COUNSEL_ROSTER_TEMPLATE.yaml
+    required_before_external_legal_advice: true
+  devtools_integrations:
+    enabled: true
+    installer_script: .harvey/installers/devtools/install_devtool_integrations.sh
+    profile_root: .harvey/integrations
+  global_law_firm:
+    enabled: true
+    operating_model_file: .harvey/GLOBAL_LAW_FIRM_OPERATING_MODEL.yaml
+    special_divisions_file: .harvey/WSDII_SPECIAL_LEGAL_DIVISIONS.yaml
+    deployment_targets_file: .harvey/DEPLOYMENT_TARGETS.yaml
 automation:
   runbook_script: .harvey/full_automation.sh
   sync_script: .harvey/sync_harvey.sh
+  mode_file: .harvey/LEGAL_MODES.yaml
   credential_files:
     - .harvey/PACER.env
     - .harvey/LEGAL_RESEARCH.env
+    - .harvey/LEGAL_COUNSEL.env
   anchor_files:
     - .harvey/LEGAL_IDENTITY_ANCHORS.yaml
     - .harvey/GOOGLE_DRIVE_SOURCES.json
     - .harvey/DRIVE_DISCOVERED_CASE_ANCHORS.json
+    - .harvey/LEGAL_MODES.yaml
+    - .harvey/LICENSED_COUNSEL_ROSTER_TEMPLATE.yaml
+    - .harvey/GLOBAL_LAW_FIRM_OPERATING_MODEL.yaml
+    - .harvey/WSDII_SPECIAL_LEGAL_DIVISIONS.yaml
+    - .harvey/DEPLOYMENT_TARGETS.yaml
+    - .harvey/integrations/codex/config.toml
+    - .harvey/integrations/vscode/extensions.json

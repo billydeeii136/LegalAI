@@ -17,7 +17,7 @@ const storageStatePath = process.env.PACER_STORAGE_STATE_PATH?.trim() || path.jo
 
 const server = new McpServer({
   name: "harvey-legal-connectors-mcp",
-  version: "0.2.0",
+  version: "0.3.0",
 });
 
 const textPayload = (text) => ({ content: [{ type: "text", text }] });
@@ -29,6 +29,24 @@ async function runPython(scriptName, args = []) {
     maxBuffer: 10 * 1024 * 1024,
   });
   return { stdout: stdout?.trim() ?? "", stderr: stderr?.trim() ?? "", scriptPath };
+}
+
+async function runProviderTemplate(provider, query) {
+  const result = await runPython("provider_query_template.py", ["--provider", provider, "--query", query]);
+  return result.stdout || result.stderr || `No output from ${provider} template.`;
+}
+
+function registerProviderTemplateTool(toolName, provider, fallbackText) {
+  server.tool(
+    toolName,
+    {
+      query: z.string(),
+    },
+    async ({ query }) => {
+      const output = await runProviderTemplate(provider, query);
+      return textPayload(output || fallbackText);
+    }
+  );
 }
 
 async function readIfExists(filePath) {
@@ -136,27 +154,55 @@ server.tool(
   }
 );
 
-server.tool(
-  "westlaw_query_template",
-  {
-    query: z.string(),
-  },
-  async ({ query }) => {
-    const result = await runPython("provider_query_template.py", ["--provider", "westlaw", "--query", query]);
-    return textPayload(result.stdout || result.stderr || "No output from Westlaw template.");
-  }
-);
+server.tool("legal_research_mode_status", {}, async () => {
+  const providerEnvVars = {
+    westlaw: "WESTLAW_API_URL",
+    lexisnexis: "LEXIS_API_URL",
+    courtlistener: "COURTLISTENER_API_URL",
+    recap: "RECAP_API_URL",
+    govinfo: "GOVINFO_API_URL",
+    worldlii: "WORLDLII_SEARCH_URL",
+    bailii: "BAILII_SEARCH_URL",
+    cornell_lii: "CORNELL_LII_SEARCH_URL",
+    canlii: "CANLII_API_URL",
+  };
 
-server.tool(
-  "lexis_query_template",
-  {
-    query: z.string(),
-  },
-  async ({ query }) => {
-    const result = await runPython("provider_query_template.py", ["--provider", "lexis", "--query", query]);
-    return textPayload(result.stdout || result.stderr || "No output from Lexis template.");
-  }
+  const configuredProviders = Object.entries(providerEnvVars)
+    .filter(([, envVar]) => Boolean(process.env[envVar]?.trim()))
+    .map(([provider]) => provider);
+
+  return textPayload(
+    JSON.stringify(
+      {
+        legal_mode: process.env.LEGAL_MODE || "zero_byok_free_open",
+        enable_paid_escalation: process.env.ENABLE_PAID_ESCALATION || "0",
+        pacer_billing_guard_enabled: process.env.PACER_BILLING_GUARD_ENABLED || "1",
+        configured_provider_count: configuredProviders.length,
+        configured_providers: configuredProviders,
+      },
+      null,
+      2
+    )
+  );
+});
+
+registerProviderTemplateTool("westlaw_query_template", "westlaw", "No output from Westlaw template.");
+registerProviderTemplateTool("lexis_query_template", "lexis", "No output from Lexis template.");
+registerProviderTemplateTool(
+  "courtlistener_search_template",
+  "courtlistener",
+  "No output from CourtListener template."
 );
+registerProviderTemplateTool("recap_search_template", "recap", "No output from RECAP template.");
+registerProviderTemplateTool("govinfo_search_template", "govinfo", "No output from GovInfo template.");
+registerProviderTemplateTool("worldlii_search_template", "worldlii", "No output from WorldLII template.");
+registerProviderTemplateTool("bailii_search_template", "bailii", "No output from BAILII template.");
+registerProviderTemplateTool(
+  "cornell_lii_search_template",
+  "cornell_lii",
+  "No output from Cornell LII template."
+);
+registerProviderTemplateTool("canlii_search_template", "canlii", "No output from CanLII template.");
 
 server.tool("case_watchlist_status", {}, async () => {
   const watchlistRaw = await readIfExists(watchlistPath);

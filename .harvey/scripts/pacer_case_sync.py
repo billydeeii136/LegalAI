@@ -64,6 +64,7 @@ def _normalize_cases(payload: dict) -> list[dict]:
                     "case_title": entry.get("case_title", "UNKNOWN_TITLE"),
                     "court": str(entry.get("court", "unknown")).lower(),
                     "case_number": str(entry.get("case_number", "unknown")),
+                    "case_number_aliases": entry.get("case_number_aliases", []),
                     "tags": entry.get("tags", []),
                     "automation": entry.get("automation", {}),
                 }

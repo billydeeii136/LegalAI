@@ -16,6 +16,12 @@ if [ -f "${ROOT_DIR}/LEGAL_RESEARCH.env" ]; then
   . "${ROOT_DIR}/LEGAL_RESEARCH.env"
   set +a
 fi
+
+if [ -f "${ROOT_DIR}/LEGAL_COUNSEL.env" ]; then
+  set -a
+  . "${ROOT_DIR}/LEGAL_COUNSEL.env"
+  set +a
+fi
 if [ -z "${PACER_USERNAME:-}" ] && [ -n "${PACER_KEYCHAIN_ACCOUNT:-}" ]; then
   PACER_USERNAME="${PACER_KEYCHAIN_ACCOUNT}"
 fi
@@ -41,6 +47,18 @@ python3 "${ROOT_DIR}/scripts/pacer_case_sync.py" \
   --report-out "${RUNTIME_DIR}/pacer_case_sync_report.json" \
   --identity-anchors "${ROOT_DIR}/LEGAL_IDENTITY_ANCHORS.yaml" \
   --drive-discovered "${ROOT_DIR}/DRIVE_DISCOVERED_CASE_ANCHORS.json"
+
+if [ "${ENABLE_INSTALLER_PIPELINE:-0}" = "1" ]; then
+  bash "${ROOT_DIR}/installers/run_installer_pipeline.sh" \
+    --targets "${ROOT_DIR}/DEPLOYMENT_TARGETS.yaml" \
+    --output-root "${RUNTIME_DIR}/installers"
+fi
+
+if [ "${ENABLE_DEVTOOLS_INSTALL:-0}" = "1" ]; then
+  bash "${ROOT_DIR}/installers/devtools/install_devtool_integrations.sh" \
+    --harvey-root "${ROOT_DIR}" \
+    --output "${RUNTIME_DIR}/devtools"
+fi
 
 if [ "${START_MCP_SERVER:-0}" = "1" ]; then
   (

@@ -8,6 +8,9 @@
       "env": {
         "HARVEY_ROOT": ".harvey",
         "HARVEY_WATCHLIST_PATH": ".harvey/LEGAL_CASE_WATCHLIST.yaml",
+        "LEGAL_MODE": "zero_byok_free_open",
+        "ENABLE_PAID_ESCALATION": "0",
+        "PACER_BILLING_GUARD_ENABLED": "1",
         "PACER_KEYCHAIN_SERVICE": "harvey.pacer.gov",
         "PACER_KEYCHAIN_ACCOUNT": "{{PACER_USERNAME}}",
         "PACER_USERNAME": "{{PACER_USERNAME}}",
@@ -17,7 +20,17 @@
         "WESTLAW_API_URL": "{{WESTLAW_API_URL}}",
         "WESTLAW_API_KEY": "{{WESTLAW_API_KEY}}",
         "LEXIS_API_URL": "{{LEXIS_API_URL}}",
-        "LEXIS_API_KEY": "{{LEXIS_API_KEY}}"
+        "LEXIS_API_KEY": "{{LEXIS_API_KEY}}",
+        "COURTLISTENER_API_URL": "{{COURTLISTENER_API_URL}}",
+        "COURTLISTENER_API_TOKEN": "{{COURTLISTENER_API_TOKEN}}",
+        "RECAP_API_URL": "{{RECAP_API_URL}}",
+        "GOVINFO_API_URL": "{{GOVINFO_API_URL}}",
+        "GOVINFO_API_KEY": "{{GOVINFO_API_KEY}}",
+        "WORLDLII_SEARCH_URL": "{{WORLDLII_SEARCH_URL}}",
+        "BAILII_SEARCH_URL": "{{BAILII_SEARCH_URL}}",
+        "CORNELL_LII_SEARCH_URL": "{{CORNELL_LII_SEARCH_URL}}",
+        "CANLII_API_URL": "{{CANLII_API_URL}}",
+        "CANLII_API_KEY": "{{CANLII_API_KEY}}"
       }
     }
   }

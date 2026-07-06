@@ -1,0 +1,58 @@
+law_firm:
+  legal_brand: William Scott Davis II Worldwide Law Firm
+  command_mode: full_automation
+  mission: Build a high-scale legal AI operations mesh for civil, criminal, appellate, and post-conviction workflows across local, state, federal, and international jurisdictions.
+coverage:
+  jurisdiction_levels:
+    - local
+    - county
+    - state
+    - federal
+    - international
+  legal_domains:
+    - civil
+    - criminal
+    - appellate
+    - post_conviction_relief
+    - constitutional
+    - civil_rights
+    - international_law
+agent_fleet:
+  legal_agents:
+    total_target_count: 2000
+    persona_policy:
+      default_persona: female
+      override_allowed_for_compliance: true
+    role_allocation:
+      legal_research_agents: 700
+      litigation_strategy_agents: 450
+      evidence_timeline_agents: 300
+      drafting_and_filing_agents: 300
+      compliance_and_audit_agents: 250
+  ai_chatbots:
+    chatbot_to_agent_ratio: 3
+    ying_yang_mode: enabled
+    distribution:
+      female_percent: 50
+      male_percent: 50
+    total_target_count: 6000
+language_operations:
+  target: worldwide_multilingual_coverage
+  baseline_languages:
+    - english
+    - spanish
+    - french
+    - arabic
+    - hindi
+    - mandarin
+    - portuguese
+    - russian
+  fallback_strategy:
+    machine_translation: enabled
+    human_review_gate_for_filing: required
+quality_and_control:
+  evidence_citation_required: true
+  jurisdiction_validation_required: true
+  conflict_check_required: true
+  no_outcome_guarantee: true
+  filing_requires_human_approval: true

@@ -1,0 +1,34 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+model = "gpt-5.5"
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+
+[mcp_servers.harvey_legal_connectors]
+command = "node"
+args = [".harvey/mcp/legal-connectors-mcp/server.js"]
+enabled = true
+startup_timeout_sec = 20
+tool_timeout_sec = 120
+env_vars = [
+  "WESTLAW_API_URL",
+  "WESTLAW_API_KEY",
+  "LEXIS_API_URL",
+  "LEXIS_API_KEY",
+  "COURTLISTENER_API_URL",
+  "COURTLISTENER_API_TOKEN",
+  "RECAP_API_URL",
+  "GOVINFO_API_URL",
+  "GOVINFO_API_KEY",
+  "WORLDLII_SEARCH_URL",
+  "BAILII_SEARCH_URL",
+  "CORNELL_LII_SEARCH_URL",
+  "CANLII_API_URL",
+  "CANLII_API_KEY"
+]
+
+[mcp_servers.harvey_legal_connectors.env]
+HARVEY_ROOT = ".harvey"
+HARVEY_WATCHLIST_PATH = ".harvey/LEGAL_CASE_WATCHLIST.yaml"
+LEGAL_MODE = "zero_byok_free_open"
+ENABLE_PAID_ESCALATION = "0"
+PACER_BILLING_GUARD_ENABLED = "1"

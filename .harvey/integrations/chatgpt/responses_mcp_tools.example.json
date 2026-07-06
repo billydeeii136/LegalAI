@@ -1,0 +1,23 @@
+{
+  "model": "gpt-5.5",
+  "tools": [
+    {
+      "type": "mcp",
+      "server_label": "harvey_legal_connectors",
+      "server_url": "{{REMOTE_HARVEY_MCP_URL}}",
+      "authorization": "{{HARVEY_MCP_OAUTH_TOKEN}}",
+      "allowed_tools": [
+        "legal_research_mode_status",
+        "courtlistener_search_template",
+        "recap_search_template",
+        "govinfo_search_template",
+        "worldlii_search_template",
+        "bailii_search_template",
+        "cornell_lii_search_template",
+        "canlii_search_template"
+      ],
+      "require_approval": "always"
+    }
+  ],
+  "input": "{{PROMPT}}"
+}

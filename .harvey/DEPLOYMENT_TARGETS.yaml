@@ -1,0 +1,41 @@
+deployment_targets:
+  macos:
+    - target_id: macbook_air_2015_monterey
+      os_version: macos_monterey
+      install_artifacts:
+        - cli_bundle
+        - gui_launcher
+      automation_mode: fully_automated
+  android:
+    - target_id: galaxy_a15_primary
+      install_artifacts:
+        - apk_bundle
+        - chatbot_profile_pack
+      automation_mode: fully_automated
+    - target_id: galaxy_a15_secondary
+      install_artifacts:
+        - apk_bundle
+        - chatbot_profile_pack
+      automation_mode: fully_automated
+    - target_id: galaxy_a17
+      install_artifacts:
+        - apk_bundle
+        - chatbot_profile_pack
+      automation_mode: fully_automated
+installer_pipeline:
+  pipeline_entrypoint: .harvey/installers/run_installer_pipeline.sh
+  build_outputs:
+    - cli_installer
+    - gui_installer
+    - apk_installer
+  build_scripts:
+    macos_cli: .harvey/installers/macos/build_cli_bundle.sh
+    macos_gui: .harvey/installers/macos/build_gui_launcher.sh
+    android_apk: .harvey/installers/android/build_apk_bundle.sh
+  update_policy:
+    auto_rebuild_on_template_change: true
+    auto_publish_to_repo_remotes: true
+    auto_sync_google_drive_snapshots: true
+  identity_binding:
+    bind_to_device_identity: true
+    bind_to_network_identity: true

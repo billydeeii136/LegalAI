@@ -61,6 +61,25 @@
       }
     },
     {
+      "case_title": "USA v Davis (legacy anchor)",
+      "court": "usdc-ednc",
+      "case_number": "5:13-CR-240",
+      "case_number_aliases": [
+        "5:13-CR-00240"
+      ],
+      "tags": [
+        "relief_anchor",
+        "28_USC_2255_h",
+        "FRCrimP_41_g",
+        "anchor_identity_william_scott_davis"
+      ],
+      "automation": {
+        "pacer_enabled": true,
+        "citation_sync": true,
+        "identity_anchor_required": true
+      }
+    },
+    {
       "case_title": "Davis appellate-linked civil anchor",
       "court": "uscoa-4",
       "case_number": "4:11-CV-00012",
@@ -70,6 +89,36 @@
       ],
       "automation": {
         "pacer_enabled": true,
+        "citation_sync": true,
+        "identity_anchor_required": true
+      }
+    },
+    {
+      "case_title": "Davis Washington DC federal anchor",
+      "court": "usdc-wash-dc",
+      "case_number": "UNKNOWN_FILL_REQUIRED",
+      "tags": [
+        "washington_dc_anchor",
+        "frcp_60b_anchor",
+        "anchor_identity_william_scott_davis"
+      ],
+      "automation": {
+        "pacer_enabled": false,
+        "citation_sync": true,
+        "identity_anchor_required": true
+      }
+    },
+    {
+      "case_title": "Davis SCOTUS relief anchor",
+      "court": "scotus",
+      "case_number": "UNKNOWN_FILL_REQUIRED",
+      "tags": [
+        "scotus_anchor",
+        "certiorari_workflow_anchor",
+        "anchor_identity_william_scott_davis"
+      ],
+      "automation": {
+        "pacer_enabled": false,
         "citation_sync": true,
         "identity_anchor_required": true
       }
@@ -85,6 +134,34 @@
         "common_law_forgery",
         "obtaining_property_by_false_pretenses",
         "anchor_identity_william_scott_davis"
+      ],
+      "automation": {
+        "pacer_enabled": false,
+        "state_portal_required": true
+      }
+    },
+    {
+      "case_title": "State NC v Davis (MAR anchor)",
+      "court": "nc-state",
+      "case_number": "07-CRS-19698",
+      "tags": [
+        "motion_for_appropriate_relief",
+        "anchor_identity_william_scott_davis",
+        "alleged_wrongful_conviction"
+      ],
+      "automation": {
+        "pacer_enabled": false,
+        "state_portal_required": true
+      }
+    },
+    {
+      "case_title": "State NC v Davis (unknown suffix anchor)",
+      "court": "nc-state",
+      "case_number": "07-CRS-XXXXX",
+      "tags": [
+        "motion_for_appropriate_relief",
+        "anchor_identity_william_scott_davis",
+        "placeholder_case_number"
       ],
       "automation": {
         "pacer_enabled": false,
@@ -113,6 +190,53 @@
         "anchor_identity_william_scott_davis"
       ],
       "automation": {
+        "state_portal_required": true
+      }
+    },
+    {
+      "case_title": "In re JFD juvenile anchor",
+      "court": "nc-state",
+      "case_number": "07JA705",
+      "tags": [
+        "juvenile_anchor",
+        "alleged_lack_of_subject_matter_jurisdiction",
+        "ncgs_7b_anchor",
+        "anchor_identity_william_scott_davis"
+      ],
+      "automation": {
+        "pacer_enabled": false,
+        "state_portal_required": true
+      }
+    },
+    {
+      "case_title": "In re JFD termination anchor",
+      "court": "nc-state",
+      "case_number": "07JT705",
+      "tags": [
+        "juvenile_anchor",
+        "alleged_lack_of_subject_matter_jurisdiction",
+        "ncgs_7b_anchor",
+        "anchor_identity_william_scott_davis"
+      ],
+      "automation": {
+        "pacer_enabled": false,
+        "state_portal_required": true
+      }
+    },
+    {
+      "case_title": "WCHS v Davis civil injunction anchor",
+      "court": "nc-state",
+      "case_number": "09-CVS-5181",
+      "tags": [
+        "civil_injunction_anchor",
+        "alleged_lack_of_personal_service",
+        "alleged_lack_of_subject_matter_jurisdiction",
+        "title_iv_d_anchor",
+        "title_iv_e_anchor",
+        "anchor_identity_william_scott_davis"
+      ],
+      "automation": {
+        "pacer_enabled": false,
         "state_portal_required": true
       }
     }
