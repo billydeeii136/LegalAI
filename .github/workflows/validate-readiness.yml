@@ -1,0 +1,20 @@
+name: Validate Readiness
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '**'
+  pull_request:
+jobs:
+  validate-readiness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate deployment readiness docs/checks
+        run: |
+          test -f docs/deployment-readiness.md
+          grep -q "Deployment Readiness" docs/deployment-readiness.md
+      - name: Validate workflow presence
+        run: |
+          test -f .github/workflows/validate-readiness.yml
