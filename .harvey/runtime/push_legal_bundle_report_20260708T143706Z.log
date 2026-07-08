@@ -1,0 +1,27 @@
+===== 10.0.0.164:5555 =====
+timestamp_utc=2026-07-08T14:37:07Z
+serial=10.0.0.164:5555
+deploy_status=ok
+sync_script=yes
+boot_script=yes
+repo_git=yes
+branch=harvey-elite-2026
+repo_path=/data/data/com.termux/files/home/legal/wsd-ccos-legal
+===== 10.0.0.16:5555 =====
+timestamp_utc=2026-07-08T14:37:08Z
+serial=10.0.0.16:5555
+deploy_status=ok
+sync_script=yes
+boot_script=yes
+repo_git=yes
+branch=harvey-elite-2026
+repo_path=/data/data/com.termux/files/home/legal/wsd-ccos-legal
+===== 10.0.0.217:5555 =====
+timestamp_utc=2026-07-08T14:37:09Z
+serial=10.0.0.217:5555
+deploy_status=ok
+sync_script=yes
+boot_script=yes
+repo_git=yes
+branch=harvey-elite-2026
+repo_path=/data/data/com.termux/files/home/legal/wsd-ccos-legal

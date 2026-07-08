@@ -1,0 +1,4 @@
+serial	deploy_status	repo_git	branch	sync_script	boot_script	confirmation_path
+10.0.0.164:5555	ok	yes	harvey-elite-2026	yes	yes	/data/data/com.termux/files/home/.legal-sync/node_confirmation.txt
+10.0.0.16:5555	ok	yes	harvey-elite-2026	yes	yes	/data/data/com.termux/files/home/.legal-sync/node_confirmation.txt
+10.0.0.217:5555	ok	yes	harvey-elite-2026	yes	yes	/data/data/com.termux/files/home/.legal-sync/node_confirmation.txt

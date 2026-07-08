@@ -1,0 +1,23 @@
+timestamp_utc=2026-07-08T14:37:12.529764+00:00
+device_report=/Users/billydeeii136/LegalAI/.harvey/runtime/push_legal_bundle_report_20260708T143706Z.tsv
+local_report=/Users/billydeeii136/LegalAI/.harvey/runtime/local_node_status_20260708T143712Z.tsv
+
+=== DEVICE STATUS ===
+serial	deploy_status	repo_git	branch	sync_script	boot_script	confirmation_path
+10.0.0.164:5555	ok	yes	harvey-elite-2026	yes	yes	/data/data/com.termux/files/home/.legal-sync/node_confirmation.txt
+10.0.0.16:5555	ok	yes	harvey-elite-2026	yes	yes	/data/data/com.termux/files/home/.legal-sync/node_confirmation.txt
+10.0.0.217:5555	ok	yes	harvey-elite-2026	yes	yes	/data/data/com.termux/files/home/.legal-sync/node_confirmation.txt
+
+=== LOCAL NODE STATUS ===
+node_path	node_type	git_present	branch	tracking	remotes	working_tree_state
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-agents	local_repo	yes	main	origin/main	gitlab,origin	dirty:2
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-core	local_repo	yes	main	origin/main	gitlab,origin	dirty:3
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-domains	local_repo	yes	main	origin/main	gitlab,origin	dirty:2
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-inventory	local_repo	yes	main	origin/main	gitlab,origin	dirty:1
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-legal	local_repo	yes	harvey-elite-2026	origin/harvey-elite-2026	gitlab,origin	dirty:2
+/Users/billydeeii136/LegalAI	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:36
+/Users/billydeeii136/lawSystem	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:33
+/Users/billydeeii136/lawyergpt	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:33
+/Users/billydeeii136/lawyersongithub	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:36
+/Users/billydeeii136/Robot-Lawyer	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:33
+/Users/billydeeii136/robo-lawyer	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:33

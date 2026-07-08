@@ -1,0 +1,12 @@
+node_path	node_type	git_present	branch	tracking	remotes	working_tree_state
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-agents	local_repo	yes	main	origin/main	gitlab,origin	dirty:2
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-core	local_repo	yes	main	origin/main	gitlab,origin	dirty:3
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-domains	local_repo	yes	main	origin/main	gitlab,origin	dirty:2
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-inventory	local_repo	yes	main	origin/main	gitlab,origin	dirty:1
+/Users/billydeeii136/WSD_CCOS/repos/wsd-ccos-legal	local_repo	yes	harvey-elite-2026	origin/harvey-elite-2026	gitlab,origin	dirty:2
+/Users/billydeeii136/LegalAI	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:36
+/Users/billydeeii136/lawSystem	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:33
+/Users/billydeeii136/lawyergpt	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:33
+/Users/billydeeii136/lawyersongithub	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:36
+/Users/billydeeii136/Robot-Lawyer	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:33
+/Users/billydeeii136/robo-lawyer	local_repo	yes	harvey-elite-2026	gitlab/harvey-elite-2026	billy,gitlab,origin	dirty:33
